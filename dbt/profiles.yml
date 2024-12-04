@@ -1,0 +1,21 @@
+dbt_postgres_local:
+  target: "{{ env_var('DBT_TARGET') }}"
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: postgres
+      pass: postgres
+      port: 5432
+      dbname: postgres
+      schema: dbt_{{ env_var('DBT_TARGET') }}
+      threads: 1
+    prod:
+      type: postgres
+      host: postgres
+      user: postgres
+      pass: postgres
+      port: 5432
+      dbname: postgres
+      schema: dbt_{{ env_var('DBT_TARGET') }}
+      threads: 1
