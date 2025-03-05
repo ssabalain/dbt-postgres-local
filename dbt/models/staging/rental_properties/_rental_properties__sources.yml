@@ -1,0 +1,14 @@
+#version: 2
+
+## This is not needed for this implementation since we are using dbt Seed files,
+## but it is a good practice to have a sources.yml file to document the sources
+## of the data that is being used in the project.
+
+#sources:
+#  - name: rental_properties
+#    schema: rental_properties_raw_schema
+#    tables:
+#      - name: amenities_changelog
+#      - name: calendar
+#      - name: generated_reviews
+#      - name: listings

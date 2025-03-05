@@ -1,0 +1,27 @@
+version: 2
+
+models:
+
+  - name: stg_rental_properties__amenities_changes
+    columns:
+      - name: amenities_change_id
+        data_tests:
+          - unique
+
+  - name: stg_rental_properties__listing_availability
+    columns:
+      - name: listing_availability_id
+        data_tests:
+          - unique
+
+  - name: stg_rental_properties__listings
+    columns:
+      - name: listing_id
+        data_tests:
+          - unique
+
+  - name: stg_rental_properties__reviews
+    columns:
+      - name: review_id
+        data_tests:
+          - unique
