@@ -4,8 +4,6 @@ services:
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
-    ports:
-      - ${PGADMIN_PORT}:80
     env_file:
       - .env
     environment:
@@ -20,6 +18,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    ports:
+      - ${PGADMIN_PORT}:80
     user: root
     volumes:
       - ./entrypoint.sh:/entrypoint_custom.sh
@@ -49,10 +49,7 @@ services:
     container_name: dbt
     build: .
     platform: linux/amd64
-    environment:
-      DBT_PROFILES_DIR: /usr/app/dbt/dbt
-      DBT_PROJECT_DIR: /usr/app/dbt/dbt
-      DBT_TARGET: dev
+    env_file: ".env"
     depends_on:
       - postgres
     volumes:
