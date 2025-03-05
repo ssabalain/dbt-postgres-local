@@ -1,4 +1,4 @@
-dbt_postgres_local:
+rental_property_management:
   target: "{{ env_var('DBT_TARGET') }}"
   outputs:
     dev:

@@ -1,9 +1,9 @@
 
-name: 'dbt_postgres_local'
+name: 'rental_property_management'
 version: '1.0.0'
 config-version: 2
 
-profile: 'dbt_postgres_local'
+profile: 'rental_property_management'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -15,6 +15,11 @@ snapshot-paths: ["snapshots"]
 clean-targets:
   - "target"
   - "dbt_packages"
+
+seeds:
+  rental_property_management:
+    +enabled: true
+    +schema: raw
 
 models:
   staging:
