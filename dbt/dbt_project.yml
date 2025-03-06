@@ -23,15 +23,18 @@ seeds:
 
 models:
   rental_property_management:
+
     staging:
       +schema: staging
       +materialized: view
       rental_properties:
         base:
           +materialized: ephemeral
+
     intermediate:
       +schema: intermediate
       +materialized: ephemeral
+
     marts:
       +schema: marts
       +materialized: table
