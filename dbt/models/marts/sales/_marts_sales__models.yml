@@ -1,0 +1,15 @@
+version: 2
+
+models:
+
+  - name: dim_reservations
+    columns:
+      - name: listing_reservation_id
+        data_tests:
+          - unique
+
+  - name: fct_reservations_revenue
+    columns:
+      - name: listing_reservation_id
+        data_tests:
+          - unique

@@ -1,0 +1,9 @@
+version: 2
+
+models:
+
+  - name: dim_listings
+    columns:
+      - name: listing_id
+        data_tests:
+          - unique
