@@ -1,0 +1,22 @@
+version: 2
+
+models:
+
+  - name: int_amenities_changes
+    description: |
+      By reading from the "amenities changes" table (which contains different snapshots of the amenities of a listing),
+      we can create a model that will show the historical changes of each amenity a specific listing ever had.
+      The complexity of this model is because it's made for catching not only new amenities appearing for a specific
+      listing, but also amenities that were removed from the listing (and even maybe having them coming back).
+
+  - name: int_amenities_by_listing_booking
+    description: |
+      Based on the "int_amenities_changes" model, this model will show the amenities a listing had at a specific time.
+
+  - name: int_largest_booking_possible_by_listing_booking
+    description: |
+      This model will show the largest booking possible for each listing booking date. This is calculated by only
+      looking at the dates in which a listing is available and grouping them by "slots", which represents blocks of
+      continuous days in which a listing is available. Having each block defined, knowing, for each date, how many days
+      are left from that slot and the minimum and maximum booking days required by the owner, allows us to calculate
+      this complex metric.

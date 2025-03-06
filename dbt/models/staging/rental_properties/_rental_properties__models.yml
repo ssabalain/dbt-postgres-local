@@ -13,6 +13,9 @@ models:
       - name: listing_booking_id
         data_tests:
           - unique
+      - name: price_per_night
+        data_tests:
+          - not_null
 
   - name: stg_rental_properties__listings
     columns:
@@ -23,5 +26,11 @@ models:
   - name: stg_rental_properties__reviews
     columns:
       - name: review_id
+        data_tests:
+          - unique
+
+  - name: stg_rental_properties__hosts
+    columns:
+      - name: host_id
         data_tests:
           - unique
