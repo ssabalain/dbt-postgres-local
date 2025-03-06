@@ -19,7 +19,6 @@ amenities as (
 select
   listing_bookings.listing_booking_id,
   listing_bookings.listing_id,
-  listing_bookings.booking_date,
   listing_bookings.reservation_id,
   listing_bookings.minimum_nights,
   listing_bookings.maximum_nights,

@@ -16,6 +16,12 @@ models:
       - name: price_per_night
         data_tests:
           - not_null
+      - name: booking_date
+        data_tests:
+          - dbt_utils.sequential_values:
+              interval: 1
+              group_by_columns: [listing_id]
+              datepart: 'day'
 
   - name: stg_rental_properties__listings
     columns:

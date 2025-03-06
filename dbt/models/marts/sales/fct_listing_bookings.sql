@@ -6,6 +6,7 @@ with listing_bookings as (
 
 select
   listing_booking_id,
+  booking_date,
   is_available,
   price_per_night,
 
