@@ -10,20 +10,20 @@ renamed as (
     {{ dbt_utils.generate_surrogate_key([
         'listing_id',
         'date'
-    ]) }} as listing_bookings_id,
+    ]) }} as listing_booking_id,
 
     listing_id,
-    cast(date as date) as calendar_date,
+    reservation_id,
+    minimum_nights,
+    maximum_nights,
+
+    cast(date as date) as booking_date,
+    cast(price as float) as price_per_night,
 
     case
       when available = 'f' then false
       when available = 't' then true
-    end as is_available,
-
-    reservation_id,
-    cast(price as float) as price_per_night,
-    minimum_nights,
-    maximum_nights
+    end as is_available
 
   from source
 
