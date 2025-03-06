@@ -10,11 +10,10 @@ renamed as (
     {{ dbt_utils.generate_surrogate_key([
         'listing_id',
         'date'
-    ]) }} as listing_availability_id,
+    ]) }} as listing_bookings_id,
 
     listing_id,
     cast(date as date) as calendar_date,
-    date_trunc('month', date) as calendar_month,
 
     case
       when available = 'f' then false

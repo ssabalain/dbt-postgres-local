@@ -13,7 +13,7 @@ renamed as (
     ]) }} as amenities_change_id,
 
     listing_id,
-    cast(change_at as timestamp) as amenities_changed_datetime,
+    cast(change_at as date) as amenities_changed_date,
     string_to_array(amenities,',') as amenities_list
 
   from source

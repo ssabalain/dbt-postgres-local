@@ -8,9 +8,9 @@ models:
         data_tests:
           - unique
 
-  - name: stg_rental_properties__listing_availability
+  - name: stg_rental_properties__listing_bookings
     columns:
-      - name: listing_availability_id
+      - name: listing_booking_id
         data_tests:
           - unique
 
