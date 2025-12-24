@@ -7,12 +7,14 @@ models:
       - name: amenities_change_id
         data_tests:
           - unique
+          - not_null
 
   - name: stg_rental_properties__listing_bookings
     columns:
       - name: listing_booking_id
         data_tests:
           - unique
+          - not_null
       - name: price_per_night
         data_tests:
           - not_null
@@ -28,15 +30,18 @@ models:
       - name: listing_id
         data_tests:
           - unique
+          - not_null
 
   - name: stg_rental_properties__reviews
     columns:
       - name: review_id
         data_tests:
           - unique
+          - not_null
 
   - name: stg_rental_properties__hosts
     columns:
       - name: host_id
         data_tests:
           - unique
+          - not_null
