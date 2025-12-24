@@ -1,6 +1,6 @@
 with source as (
 
-  select * from {{ ref('amenities_changelog') }}
+  select * from {{ ref('AMENITIES_CHANGELOG') }}
 
 ),
 
