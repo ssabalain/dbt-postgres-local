@@ -109,6 +109,7 @@ maximum_booking_available as (
     *,
 
     case
+      when slot_days_remaining > maximum_nights then maximum_nights
       when slot_days_remaining between minimum_nights and maximum_nights then slot_days_remaining
       else null
     end as largest_booking_possible_on_date
