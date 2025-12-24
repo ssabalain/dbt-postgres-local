@@ -25,6 +25,7 @@ renamed as (
     review_scores_rating
 
   from source
+  where id is not null
 
 )
 

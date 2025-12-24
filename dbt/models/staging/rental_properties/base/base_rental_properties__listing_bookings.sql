@@ -29,4 +29,19 @@ renamed as (
 
 )
 
-select * from renamed
+, ranked_calendar as (
+
+  select
+    *,
+
+    row_number() over(
+      partition by listing_booking_id
+      order by reservation_id asc
+    ) as dedup_ranking
+
+  from renamed
+
+)
+
+select * from ranked_calendar
+where dedup_ranking = 1
