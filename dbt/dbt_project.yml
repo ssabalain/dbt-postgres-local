@@ -20,6 +20,7 @@ seeds:
   rental_property_management:
     +enabled: true
     +schema: raw
+    +quote_columns: false
 
 models:
   rental_property_management:
