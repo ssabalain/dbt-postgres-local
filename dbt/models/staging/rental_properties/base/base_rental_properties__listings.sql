@@ -17,7 +17,22 @@ renamed as (
     bathrooms_text,
     bedrooms,
     beds,
-    string_to_array(regexp_replace(amenities, '[\"\[\]]', '', 'g'),',') as amenities_list,
+    split(
+        replace(
+            replace(
+                replace(
+                    replace(amenities,'"','')
+                    , '\n'
+                    ,''
+                )
+                , '['
+                , ''
+            )
+            , ']'
+            , ''
+        )
+        , ','
+    ) as amenities_list,
     cast(price as float) as listing_price,
     number_of_reviews,
     first_review,

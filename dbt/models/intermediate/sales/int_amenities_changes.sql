@@ -23,11 +23,10 @@ amenities_by_listing as (
   select
     listing_id,
     amenities_changed_date,
-    -- We clean the amenities list to remove the square brackets and quotes, and the new line characters.
-    trim(regexp_replace(unnest(amenities_list), E'[\\[\\]"\\n\\r]+', ' ', 'g')) as amenity
+    trim(cast(value as string)) as amenity
 
   from amenities_changes
-  group by 1,2,3
+  left join lateral flatten(input => amenities_list)
 
 ),
 

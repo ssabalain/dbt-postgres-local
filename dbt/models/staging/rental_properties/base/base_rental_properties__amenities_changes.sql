@@ -14,7 +14,23 @@ renamed as (
 
     listing_id,
     cast(change_at as date) as amenities_changed_date,
-    string_to_array(amenities,',') as amenities_list
+
+   split(
+      replace(
+          replace(
+              replace(
+                  replace(amenities,'"','')
+                  , '\n'
+                  ,''
+              )
+              , '['
+              , ''
+          )
+          , ']'
+          , ''
+      )
+      , ','
+  ) as amenities_list
 
   from source
 
